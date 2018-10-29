@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
+echo "Start build"
 if [ -n "$( find $1 -maxdepth 3 -iname startup.cs )" ]; then
-    echo "ASP.NET 5" && exit 0
+    echo "    ASP.NET 5" && exit 0
 else
-    echo "no" && exit 1
+    echo "    No" && exit 1
 fi
