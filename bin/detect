@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # bin/detect <build-dir>
 
-echo "Start build"
+echo "https://github.com/phamhongphuc/heroku.buildpack.dotnetcore <-----"
 if [ -n "$( find $1 -maxdepth 3 -iname startup.cs )" ]; then
     echo "    ASP.NET 5" && exit 0
 else
