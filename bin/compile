@@ -55,6 +55,7 @@ fi | tab
 
 ________ "Installing dotnet"
 install_dotnet $BUILD_DIR $CACHE_DIR $NETCORE_VERSION | tab
+export_path $BUILD_DIR
 
 export PATH="/app/dotnet:${PATH}"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}"

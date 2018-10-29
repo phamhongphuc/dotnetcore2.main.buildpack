@@ -75,6 +75,12 @@ function apt_install(){
         done
     } | tab
     
+    echo "▄ APT packages Installled"
+}
+
+function export_path(){
+    local BUILD_DIR="$1"
+    
     export PATH="$PATH:$BUILD_DIR/.apt/usr/bin"
     export LD_LIBRARY_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu:$BUILD_DIR/.apt/usr/lib:${LD_LIBRARY_PATH-}"
     export LIBRARY_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu:$BUILD_DIR/.apt/usr/lib:${LIBRARY_PATH-}"
@@ -82,8 +88,6 @@ function apt_install(){
     export CPATH="${INCLUDE_PATH-}"
     export CPPPATH="${INCLUDE_PATH-}"
     export PKG_CONFIG_PATH="$BUILD_DIR/.apt/usr/lib/x86_64-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/i386-linux-gnu/pkgconfig:$BUILD_DIR/.apt/usr/lib/pkgconfig:${PKG_CONFIG_PATH-}"
-    
-    echo "▄ APT packages Installled"
 }
 
 function export_env_dir() {
